@@ -17,7 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _USER_CONFIG_OVERRIDE_H_
+//#ifndef _USER_CONFIG_OVERRIDE_H_
 #define _USER_CONFIG_OVERRIDE_H_
 
 // force the compiler to show a warning to confirm that this file is included
@@ -40,6 +40,13 @@
  *   - You still need to update my_user_config.h for major define USE_MQTT_TLS.
  *   - All parameters can be persistent changed online using commands via MQTT, WebConsole or Serial.
 \*****************************************************************************************************/
+
+// -- Setup your own Wifi settings  ---------------
+#undef  STA_SSID1
+#define STA_SSID1         "xxxxxxxxxxxxxxxx"             // [Ssid1] Wifi SSID
+
+#undef  STA_PASS1
+#define STA_PASS1         "xxxxxxxxxxxxxx"     // [Password1] Wifi password
 
 /*
 Examples :
@@ -92,4 +99,4 @@ Examples :
 
 
 
-#endif  // _USER_CONFIG_OVERRIDE_H_
+//#endif  // _USER_CONFIG_OVERRIDE_H_

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copy this bash script to a directory below /Tasmota and run from there
 
@@ -66,6 +66,10 @@ if test -d `pwd`"/Tasmota"; then
         ##    sed -i 's/^; *-DUSE_CONFIG_OVERRIDE/                            -DUSE_CONFIG_OVERRIDE/' Tasmota/platformio.ini
             cp user_config_override.h Tasmota/tasmota/user_config_override.h
             echo -e "Using your user_config_override.h and overwriting the existing file\n"
+        fi
+        if test -e "tasmota_configurations_ESP32.h"; then
+            cp tasmota_configurations_ESP32.h Tasmota/tasmota/tasmota_configurations_ESP32.h
+            echo -e "Using your tasmota_configurations_ESP32.h and overwriting the existing file\n"
         fi
         ## Run container with provided arguments
         echo -n "Compiling..."
